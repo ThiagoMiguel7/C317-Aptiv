@@ -47,8 +47,8 @@ class KpiWidget extends StatelessWidget {
   }
 }
 
-class kpiGeralScreen extends StatelessWidget {
-  const kpiGeralScreen({super.key});
+class FiltroSegmentacaoScreen extends StatelessWidget {
+  const FiltroSegmentacaoScreen({super.key});
 
   static const String imagePath = "assets/image.png";
 
@@ -97,7 +97,7 @@ class kpiGeralScreen extends StatelessWidget {
                     alignment:
                         Alignment.center, // Alinhamento do texto no centro
                     child: const Text(
-                      "KPI GERAL",
+                      "FILTRO E SEGMENTAÇÃO",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: Colors.white, // Cor do texto
@@ -128,55 +128,68 @@ class kpiGeralScreen extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        KpiWidget(
-                          title: 'Receita Total',
-                          value: '\$500 milhões',
-                          comparison: 'Comparado a \$14 bilhões da Aptiv',
+                        Text(
+                          'Filtros',
+                          style: TextStyle(
+                            color: const Color.fromARGB(255, 0, 0, 0),
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                         KpiWidget(
-                          title: 'Lucro Líquido',
-                          value: '\$50 milhões',
-                          comparison: 'Comparado a \$1,2 bilhão da Aptiv',
-                        ),
-                        KpiWidget(
-                          title: 'Margem de Lucro',
-                          value: '10%',
-                          comparison: 'Comparado a 8,5% da Aptiv',
-                        ),
-                        KpiWidget(
-                          title: 'Custo de Aquisição de Cliente (CAC)',
-                          value: '\$200',
-                          comparison:
-                              'Comparado a um valor não divulgado pela Aptiv',
-                        ),
-                        KpiWidget(
-                          title: 'Crescimento Ano a Ano',
-                          value: 'Aumento de 20%',
-                          comparison: 'Comparado ao crescimento real da Aptiv',
-                        ),
-                        KpiWidget(
-                          title: 'Market Share',
-                          value: '10% em um nicho de mercado específico',
-                          comparison:
-                              'Comparado ao market share global da Aptiv',
-                        ),
-                        KpiWidget(
-                          title: 'Objetivo de Receita',
+                          title: 'Filtro de Produto',
                           value:
-                              '75% alcançado do objetivo anual de \$670 milhões',
-                          comparison: 'Objetivo passado:',
+                              'Vendas do "Sistema de Assistência ao Motorista X" no T1 2023:\$2,500,000 no T1 2023',
+                          comparison: 'Comparado a outros produtos',
                         ),
                         KpiWidget(
-                          title: 'Objetivo de Redução de Custo',
+                          title: 'Filtro de Região',
                           value:
-                              '60% alcançado do objetivo de redução de 5% nos custos operacionais',
-                          comparison: 'Objetivo passado:',
+                              'Vendas na América do Norte em 2022:\$12,000,000 em 2022',
+                          comparison: 'Comparado a outras regiões',
                         ),
                         KpiWidget(
-                          title: 'Alerta de Desempenho',
-                          value: 'O CAC aumentou 15% no último trimestre',
-                          comparison:
-                              'Sinalizando a necessidade de otimização das estratégias de marketing',
+                          title: 'Filtro de Período de Tempo',
+                          value: 'Vendas totais no T1 2023: \$30,000,000',
+                          comparison: 'Comparado a outros trimestres',
+                        ),
+                        KpiWidget(
+                          title: 'Filtro de Canal de Vendas',
+                          value:
+                              'Vendas Diretas no T1 2023: \$20,000,000\nVendas por Revendedores no T1 2023:\$10,000,000',
+                          comparison: 'Comparação de canais de vendas',
+                        ),
+                        Text(
+                          'Segmentação',
+                          style: TextStyle(
+                            color: const Color.fromARGB(255, 0, 0, 0),
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        KpiWidget(
+                          title: 'Segmentação por Região Geográfica',
+                          value:
+                              'Europa: Média de Satisfação = 8.5 \nÁsia: Média de Satisfação = 8.2\nAmérica do Norte: Média de Satisfação = 8.7',
+                          comparison: 'Comparado a outras regiões',
+                        ),
+                        KpiWidget(
+                          title: 'Segmentação por Produto',
+                          value:
+                              'Sistema de Entretenimento de Bordo: Média de Satisfação = 8.9\nSistemas de Segurança: Média de Satisfação = 8.6',
+                          comparison: 'Comparado a outros produtos',
+                        ),
+                        KpiWidget(
+                          title: 'Segmentação por Tipo de Cliente',
+                          value:
+                              'Fabricantes de Automóveis: Média de Satisfação = 8.8\nConsumidores Finais: Média de Satisfação = 8.5',
+                          comparison: 'Comparado a outros tipos de clientes',
+                        ),
+                        KpiWidget(
+                          title: 'Segmentação por Faixa Etária dos Clientes',
+                          value:
+                              '18-34 anos: Média de Satisfação = 8.7\n35-49 anos: Média de Satisfação = 8.6\n50+ anos: Média de Satisfação = 8.4',
+                          comparison: 'Comparado a outras faixas etárias',
                         ),
                       ],
                     ),

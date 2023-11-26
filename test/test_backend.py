@@ -51,9 +51,6 @@ class TestAPI(unittest.TestCase):
         self.assertTrue(result['success'])
         self.assertEqual(response.status_code, 200)
 
-
-
-
     def test_tipo_dado_incorreto(self):
         url = 'http://localhost:5000/register'
         data = {
@@ -68,7 +65,6 @@ class TestAPI(unittest.TestCase):
         self.assertFalse(result['success'])
         self.assertEqual(response.status_code, 500)
 
-
     def test_register_user_failure(self):
         url = 'http://localhost:5000/register'
         data = {
@@ -79,8 +75,6 @@ class TestAPI(unittest.TestCase):
         self.assertFalse(result['success'])
         self.assertEqual(response.status_code, 400)
 
-
-
     def test_delete_user_success(self):
         url = 'http://localhost:5000/delete_user'
         data = {
@@ -90,7 +84,6 @@ class TestAPI(unittest.TestCase):
         result = response.json()
         self.assertTrue(result['success'])
         self.assertEqual(response.status_code, 200)
-
 
 if __name__ == '__main__':
     unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output=r'C:\C317\C317-Aptiv\artifacts'))

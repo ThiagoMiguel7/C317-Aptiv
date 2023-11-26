@@ -6,7 +6,8 @@ import 'package:flutter/material.dart';
 
 class MenuScreen extends StatelessWidget {
   final String name;
-  const MenuScreen({super.key, required this.name});
+  final String registro;
+  const MenuScreen({super.key, required this.name, required this.registro});
 
   static const String imagePath = "assets/image.png";
 
@@ -94,8 +95,9 @@ class MenuScreen extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) =>
-                                const BeneficiosScreen()), // Navega para BeneficiosPage
+                          builder: (context) =>
+                              BeneficiosScreen(registro: registro),
+                        ),
                       );
                     },
                     style: TextButton.styleFrom(

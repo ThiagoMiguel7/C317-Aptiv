@@ -15,7 +15,7 @@ CREATE TABLE beneficios
 (
     id_beneficio INT AUTO_INCREMENT PRIMARY KEY,
     id_registro INT NOT NULL,
-    descricao VARCHAR(20) NOT NULL,
+    descricao VARCHAR(20) NOT NULL, 
     FOREIGN KEY (id_registro) REFERENCES colaboradores(registro)
 );
 
@@ -38,3 +38,4 @@ CREATE TABLE KPIs
 );
 
 SELECT * FROM colaboradores;
+

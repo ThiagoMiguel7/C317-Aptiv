@@ -183,7 +183,7 @@ class _LoginPageState extends State<LoginPage> {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => MenuScreen(name: result.name),
+                    builder: (context) => MenuScreen(name: result.name, registro: result.registro),
                   ),
                 );
               } else {

@@ -1,7 +1,10 @@
+import 'package:aptiv_app/admScreen/colaboradores_http.dart';
 import 'package:flutter/material.dart';
 
 class BeneficiosScreen extends StatelessWidget {
-  const BeneficiosScreen({super.key});
+  final String registro;
+
+  const BeneficiosScreen({super.key, required this.registro});
 
   static const String imagePath = "assets/image.png";
 
@@ -67,56 +70,69 @@ class BeneficiosScreen extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      SizedBox(
-                        width: 160,
-                        height: 50,
-                        child: TextButton(
-                          onPressed: () {},
-                          style: TextButton.styleFrom(
-                            foregroundColor: const Color.fromARGB(255, 0, 0, 0),
-                            padding: const EdgeInsets.symmetric(horizontal: 19),
-                            backgroundColor: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                              side: const BorderSide(
+                      Visibility(
+                        visible:
+                            true, // Defina como false para tornar o SizedBox invisível
+                        child: SizedBox(
+                          width: 160,
+                          height: 50,
+                          child: TextButton(
+                            onPressed: () {},
+                            style: TextButton.styleFrom(
+                              foregroundColor:
+                                  const Color.fromARGB(255, 0, 0, 0),
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 19),
+                              backgroundColor: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                                side: const BorderSide(
                                   color: Color.fromARGB(255, 0, 0, 0),
-                                  width: 1),
+                                  width: 1,
+                                ),
+                              ),
                             ),
-                          ),
-                          child: const Align(
-                            alignment: Alignment.centerLeft,
-                            child: Text(
-                              'PLANO DE SAÚDE',
-                              style: TextStyle(
-                                fontSize: 14,
+                            child: const Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                'PLANO DE SAÚDE',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                ),
                               ),
                             ),
                           ),
                         ),
                       ),
                       const SizedBox(width: 15),
-                      SizedBox(
-                        width: 160,
-                        height: 50,
-                        child: TextButton(
-                          onPressed: () {},
-                          style: TextButton.styleFrom(
-                            foregroundColor: const Color.fromARGB(255, 0, 0, 0),
-                            padding: const EdgeInsets.symmetric(horizontal: 19),
-                            backgroundColor: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                              side: const BorderSide(
-                                  color: Color.fromARGB(255, 0, 0, 0),
-                                  width: 1),
+                      Visibility(
+                        visible:
+                            true, // Defina como true ou false para controlar a visibilidade
+                        child: SizedBox(
+                          width: 160,
+                          height: 50,
+                          child: TextButton(
+                            onPressed: () {},
+                            style: TextButton.styleFrom(
+                              foregroundColor:
+                                  const Color.fromARGB(255, 0, 0, 0),
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 19),
+                              backgroundColor: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                                side: const BorderSide(
+                                    color: Color.fromARGB(255, 0, 0, 0),
+                                    width: 1),
+                              ),
                             ),
-                          ),
-                          child: const Align(
-                            alignment: Alignment.centerLeft,
-                            child: Text(
-                              'PLANO DENTAL',
-                              style: TextStyle(
-                                fontSize: 14,
+                            child: const Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                'PLANO DENTAL',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                ),
                               ),
                             ),
                           ),
@@ -131,56 +147,68 @@ class BeneficiosScreen extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      SizedBox(
-                        width: 160,
-                        height: 50,
-                        child: TextButton(
-                          onPressed: () {},
-                          style: TextButton.styleFrom(
-                            foregroundColor: const Color.fromARGB(255, 0, 0, 0),
-                            padding: const EdgeInsets.symmetric(horizontal: 19),
-                            backgroundColor: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                              side: const BorderSide(
-                                  color: Color.fromARGB(255, 0, 0, 0),
-                                  width: 1),
+                      Visibility(
+                        visible:
+                            true, // Altere para false para ocultar o botão 'VALE REFEIÇÃO'
+                        child: SizedBox(
+                          width: 160,
+                          height: 50,
+                          child: TextButton(
+                            onPressed: () {},
+                            style: TextButton.styleFrom(
+                              foregroundColor:
+                                  const Color.fromARGB(255, 0, 0, 0),
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 19),
+                              backgroundColor: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                                side: const BorderSide(
+                                    color: Color.fromARGB(255, 0, 0, 0),
+                                    width: 1),
+                              ),
                             ),
-                          ),
-                          child: const Align(
-                            alignment: Alignment.centerLeft,
-                            child: Text(
-                              'VALE REFEIÇÃO',
-                              style: TextStyle(
-                                fontSize: 14,
+                            child: const Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                'VALE REFEIÇÃO',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                ),
                               ),
                             ),
                           ),
                         ),
                       ),
                       const SizedBox(width: 15),
-                      SizedBox(
-                        width: 160,
-                        height: 50,
-                        child: TextButton(
-                          onPressed: () {},
-                          style: TextButton.styleFrom(
-                            foregroundColor: const Color.fromARGB(255, 0, 0, 0),
-                            padding: const EdgeInsets.symmetric(horizontal: 19),
-                            backgroundColor: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                              side: const BorderSide(
-                                  color: Color.fromARGB(255, 0, 0, 0),
-                                  width: 1),
+                      Visibility(
+                        visible:
+                            true, // Altere para false para ocultar o botão 'VALE TRANSPORTE'
+                        child: SizedBox(
+                          width: 160,
+                          height: 50,
+                          child: TextButton(
+                            onPressed: () {},
+                            style: TextButton.styleFrom(
+                              foregroundColor:
+                                  const Color.fromARGB(255, 0, 0, 0),
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 19),
+                              backgroundColor: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                                side: const BorderSide(
+                                    color: Color.fromARGB(255, 0, 0, 0),
+                                    width: 1),
+                              ),
                             ),
-                          ),
-                          child: const Align(
-                            alignment: Alignment.centerLeft,
-                            child: Text(
-                              'VALE TRANSPORTE',
-                              style: TextStyle(
-                                fontSize: 14,
+                            child: const Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                'VALE TRANSPORTE',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                ),
                               ),
                             ),
                           ),
@@ -195,56 +223,68 @@ class BeneficiosScreen extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      SizedBox(
-                        width: 160,
-                        height: 50,
-                        child: TextButton(
-                          onPressed: () {},
-                          style: TextButton.styleFrom(
-                            foregroundColor: const Color.fromARGB(255, 0, 0, 0),
-                            padding: const EdgeInsets.symmetric(horizontal: 19),
-                            backgroundColor: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                              side: const BorderSide(
-                                  color: Color.fromARGB(255, 0, 0, 0),
-                                  width: 1),
+                      Visibility(
+                        visible:
+                            true, // Altere para false para ocultar o botão 'VALE REFEIÇÃO'
+                        child: SizedBox(
+                          width: 160,
+                          height: 50,
+                          child: TextButton(
+                            onPressed: () {},
+                            style: TextButton.styleFrom(
+                              foregroundColor:
+                                  const Color.fromARGB(255, 0, 0, 0),
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 19),
+                              backgroundColor: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                                side: const BorderSide(
+                                    color: Color.fromARGB(255, 0, 0, 0),
+                                    width: 1),
+                              ),
                             ),
-                          ),
-                          child: const Align(
-                            alignment: Alignment.centerLeft,
-                            child: Text(
-                              'FARMÁCIA',
-                              style: TextStyle(
-                                fontSize: 14,
+                            child: const Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                'FÁRMACIA',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                ),
                               ),
                             ),
                           ),
                         ),
                       ),
                       const SizedBox(width: 15),
-                      SizedBox(
-                        width: 160,
-                        height: 50,
-                        child: TextButton(
-                          onPressed: () {},
-                          style: TextButton.styleFrom(
-                            foregroundColor: const Color.fromARGB(255, 0, 0, 0),
-                            padding: const EdgeInsets.symmetric(horizontal: 19),
-                            backgroundColor: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                              side: const BorderSide(
-                                  color: Color.fromARGB(255, 0, 0, 0),
-                                  width: 1),
+                      Visibility(
+                        visible:
+                            true, // Altere para false para ocultar o botão 'VALE TRANSPORTE'
+                        child: SizedBox(
+                          width: 160,
+                          height: 50,
+                          child: TextButton(
+                            onPressed: () {},
+                            style: TextButton.styleFrom(
+                              foregroundColor:
+                                  const Color.fromARGB(255, 0, 0, 0),
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 19),
+                              backgroundColor: Colors.white,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                                side: const BorderSide(
+                                    color: Color.fromARGB(255, 0, 0, 0),
+                                    width: 1),
+                              ),
                             ),
-                          ),
-                          child: const Align(
-                            alignment: Alignment.centerLeft,
-                            child: Text(
-                              'GYMPASS',
-                              style: TextStyle(
-                                fontSize: 14,
+                            child: const Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                'GYMPASS',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                ),
                               ),
                             ),
                           ),

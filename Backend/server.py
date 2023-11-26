@@ -99,6 +99,31 @@ def delete_user():
         if cnx:
             cnx.close()
 
+
+@app.route('/beneficios', methods=['POST'])
+def inserir_beneficio():
+    try:
+        dados_beneficio = request.json
+
+        cnx = bancoDados.get_connection()
+        cursor = cnx.cursor()
+
+        query = "INSERT INTO beneficios (id_registro, descricao) VALUES (%s, %s)"
+        valores = (dados_beneficio['id_registro'], dados_beneficio['descricao'])
+
+        cursor.execute(query, valores)
+        cnx.commit()
+
+        cursor.close()
+        cnx.close()
+
+        return jsonify({"success": True, "message": "Benefício inserido com sucesso."}), 201
+
+    except Exception as err:
+        print(f"Erro: {err}")
+        return jsonify({"success": False, "message": "Erro ao inserir benefício."}), 500
+
+
 @app.route('/beneficios/<int:registro>', methods=['GET'])
 def pesquisar_beneficio(registro):
     try:
@@ -113,6 +138,39 @@ def pesquisar_beneficio(registro):
     except Exception as err:
         print(f"Erro: {err}")
         return jsonify({"success": False, "message": "Erro ao buscar benefícios."}), 500
+    
+
+@app.route('/beneficios/<int:id_registro>', methods=['POST'])
+def atribuir_beneficio(id_registro):
+    try:
+        # Obtenha os dados do pedido JSON
+        data = request.get_json()
+
+        # Verifique se o pedido possui os campos necessários
+        if 'descricao' in data:
+            descricao = data['descricao']
+
+            # Conecte-se ao banco de dados
+            cnx = bancoDados.get_connection()
+            cursor = cnx.cursor()
+
+            # Insira o benefício na tabela de benefícios
+            query = "INSERT INTO beneficios (id_registro, descricao) VALUES (%s, %s)"
+            cursor.execute(query, (id_registro, descricao))
+            cnx.commit()
+
+            cursor.close()
+            cnx.close()
+
+            return jsonify({"success": True, "message": "Benefício atribuído com sucesso."}), 201  # Código de status 201 para criação
+
+        else:
+            return jsonify({"success": False, "message": "Dados incompletos no pedido."}), 400  # Código de status 400 para pedido inválido
+
+    except Exception as err:
+        print(f"Erro: {err}")
+        return jsonify({"success": False, "message": "Erro ao atribuir benefício."}), 500
+
 
 @app.route('/holerite/<int:registro>', methods=['GET'])
 def pesquisar_holerite(registro):

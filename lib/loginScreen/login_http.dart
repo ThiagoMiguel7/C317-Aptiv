@@ -6,8 +6,9 @@ class LoginResponse {
   final bool success;
   final String message;
   final String name;
+  final String registro;
 
-  LoginResponse({required this.success, required this.message, this.name = ""});
+  LoginResponse({required this.success, required this.message, this.name = "", this.registro = ""});
 }
 
 Future<LoginResponse> loginUser(String registro, String senha) async {
@@ -40,7 +41,7 @@ Future<LoginResponse> loginUser(String registro, String senha) async {
       if (data is Map && data['success'] is bool && data['message'] is String) {
         final name = data['name'] is String ? data['name'] : "";
         return LoginResponse(
-            success: data['success'], message: data['message'], name: name);
+            success: data['success'], message: data['message'], name: name, registro: registro);
       } else {
         return LoginResponse(
             success: false, message: 'Dados inválidos recebidos do servidor.');
@@ -62,4 +63,3 @@ Future<LoginResponse> loginUser(String registro, String senha) async {
         success: false, message: 'Erro durante a tentativa de login: $e');
   }
 }
-

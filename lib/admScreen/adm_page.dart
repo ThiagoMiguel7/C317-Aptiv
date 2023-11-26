@@ -1,3 +1,5 @@
+import 'package:aptiv_app/admScreen/atribuirBeneficios_page.dart';
+import 'package:aptiv_app/admScreen/updateBeneficios_page.dart';
 import 'package:flutter/material.dart';
 
 import 'colaboradores_page.dart';
@@ -109,7 +111,7 @@ class AdmScreen extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                             builder: (context) =>
-                                const ColaboradoresScreen()), // Navega para BeneficiosPage
+                                updateBeneficiosScreen()), // Navega para BeneficiosPage
                       );
                     },
                     style: TextButton.styleFrom(
@@ -161,59 +163,6 @@ class AdmScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 17),
-                SizedBox(
-                  width: 335,
-                  height: 50,
-                  child: TextButton(
-                    onPressed: () {},
-                    style: TextButton.styleFrom(
-                      padding: EdgeInsets.symmetric(horizontal: 19),
-                      primary: Color.fromARGB(255, 0, 0, 0),
-                      backgroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        side: BorderSide(
-                            color: Color.fromARGB(255, 0, 0, 0), width: 1),
-                      ),
-                    ),
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        'ATUALIZAR HOLERITES',
-                        style: TextStyle(
-                          fontSize: 14,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 17),
-                SizedBox(
-                  width: 335,
-                  height: 50,
-                  child: TextButton(
-                    onPressed: () {},
-                    style: TextButton.styleFrom(
-                      padding: EdgeInsets.symmetric(horizontal: 19),
-                      primary: Color.fromARGB(255, 0, 0, 0),
-                      backgroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        side: BorderSide(
-                            color: Color.fromARGB(255, 0, 0, 0), width: 1),
-                      ),
-                    ),
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        'ATUALIZAR KPIS',
-                        style: TextStyle(
-                          fontSize: 14,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
               ],
             ),
           ),

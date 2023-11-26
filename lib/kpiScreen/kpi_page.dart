@@ -1,3 +1,4 @@
+import 'package:aptiv_app/kpiScreen/filtroSegmentacao_page.dart';
 import 'package:aptiv_app/kpiScreen/graficos_page.dart';
 import 'package:aptiv_app/kpiScreen/kpiGeral_page.dart';
 import 'package:flutter/material.dart';
@@ -131,7 +132,13 @@ class KpiScreen extends StatelessWidget {
                 width: 335,
                 height: 50,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    // Navega para a tela de gráficos
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                          builder: (context) => FiltroSegmentacaoScreen()),
+                    );
+                  },
                   style: TextButton.styleFrom(
                     padding: EdgeInsets.symmetric(horizontal: 19),
                     primary: Color.fromARGB(255, 0, 0, 0),
@@ -264,23 +271,6 @@ class KpiScreen extends StatelessWidget {
               const SizedBox(
                 width: 316,
                 height: 15,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  TextButton(
-                    child: const Text(
-                      'Filtrar por Data',
-                      style: TextStyle(
-                        color: Color.fromRGBO(255, 107, 0, 1),
-                        fontSize: 15,
-                      ),
-                    ),
-                    onPressed: () {
-                      // Tela de inscrição
-                    },
-                  )
-                ],
               ),
             ],
           ),
